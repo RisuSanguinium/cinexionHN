@@ -1,125 +1,293 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Cinexion prueba',
+      title: 'Cinexion',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.yellow,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/estrenos': (context) => EstrenosPage(),
+        '/dulceria': (context) => DulceriaPage(),
+        '/boletos': (context) => BoletosPage(),
+        '/taquilla': (context) => TaquillaPage(),
+        '/cartelera': (context) => CarteleraPage(),
+        '/servicio': (context) => ServicioPage(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text('¡Bienvenido a Cinexion!'),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/estrenos');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 50), // Ajusta el tamaño mínimo del botón
+              ),
+              child: Text(
+                'Estrenos',
+                style: TextStyle(fontSize: 18), // Ajusta el tamaño de la letra
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            SizedBox(height: 20), // Espacio entre los botones
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/dulceria');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 50), // Ajusta el tamaño mínimo del botón
+              ),
+              child: Text(
+                'Dulceria',
+                style: TextStyle(fontSize: 18), // Ajusta el tamaño de la letra
+              ),
+            ),
+            SizedBox(height: 20), // Espacio entre los botones
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/cartelera');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 50), // Ajusta el tamaño mínimo del botón
+              ),
+              child: Text(
+                'Cartelera',
+                style: TextStyle(fontSize: 18), // Ajusta el tamaño de la letra
+              ),
+            ),
+            SizedBox(height: 20), // Espacio entre los botones
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/boletos');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 50), // Ajusta el tamaño mínimo del botón
+              ),
+              child: Text(
+                'Boletos',
+                style: TextStyle(fontSize: 18), // Ajusta el tamaño de la letra
+              ),
+            ),
+            SizedBox(height: 20), // Espacio entre los botones
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/taquilla');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 50), // Ajusta el tamaño mínimo del botón
+              ),
+              child: Text(
+                'Taquilla',
+                style: TextStyle(fontSize: 18), // Ajusta el tamaño de la letra
+              ),
+            ),
+            SizedBox(height: 20), // Espacio entre los botones
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/servicio');
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(200, 50), // Ajusta el tamaño mínimo del botón
+              ),
+              child: Text(
+                'Servicio al Cliente',
+                style: TextStyle(fontSize: 18), // Ajusta el tamaño de la letra
+              ),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+
+class EstrenosPage extends StatelessWidget {
+  final List<Movie> upcomingMovies = [
+    Movie(
+      title: "Twisters",
+      releaseDate: "8 de Julio 2024",
+      posterUrl:
+          "https://th.bing.com/th?id=OIF.SzHUHhoX9ejvtm1g%2fC0jCg&rs=1&pid=ImgDetMain",
+    ),
+    Movie(
+      title: "Bob Marley: La Leyenda",
+      releaseDate: "15 de Febrero 2024",
+      posterUrl:
+          "https://th.bing.com/th/id/R.e0288ba73406bdfd272027c57737095d?rik=Wx5lz4HZiI1Hkg&riu=http%3a%2f%2fwww.impawards.com%2f2024%2fposters%2fbob_marley_one_love_ver5.jpg&ehk=Be7YFgYLQi0RNeAQSr78CvMTS%2fr0g4%2bT4zu9UV1q2d4%3d&risl=&pid=ImgRaw&r=0",
+    ),
+    Movie(
+      title: "Dune: Parte 2",
+      releaseDate: "6 de Febrero 2024",
+      posterUrl:
+          "https://th.bing.com/th/id/OIP.euT_3v4i3iR_eOh3KGU8QgAAAA?rs=1&pid=ImgDetMain",
+    ),
+    Movie(
+      title: "Back to Black",
+      releaseDate: "11 de abril 2024",
+      posterUrl:
+          "https://th.bing.com/th/id/OIP.UmGyTM2_ZD-vgdRZgiEITQAAAA?rs=1&pid=ImgDetMain",
+    ),
+    Movie(
+      title: "Challengers",
+      releaseDate: "26 de marzo 2024",
+      posterUrl:
+          "https://th.bing.com/th/id/OIP.Vwf04-b_gqmHp5Or68G1GwHaK-?rs=1&pid=ImgDetMain",
+    ),
+    Movie(
+      title: "Deadpool y Wolverine",
+      releaseDate: "25 de julio 2024",
+      posterUrl:
+          "https://preview.redd.it/official-new-poster-for-deadpool-and-wolverine-v0-txne73o16iic1.jpeg?width=1080&crop=smart&auto=webp&s=1c60613d05ca418d3e4de1f367387246ca519403",
+    ),
+    // Añade más películas según sea necesario
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('¡Explora nuestros nuevos estrenos!'),
+      ),
+      body: ListView.builder(
+        itemCount: upcomingMovies.length,
+        itemBuilder: (context, index) {
+          final movie = upcomingMovies[index];
+          return Container(
+            height: 150.0, // Ajusta la altura deseada para cada Card
+            margin: EdgeInsets.symmetric(
+                vertical: 8.0, horizontal: 16.0), // Opcional: añadir margen
+            child: Card(
+              child: Padding(
+                padding:
+                    EdgeInsets.all(8.0), // Opcional: padding dentro de la card
+                child: Row(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                          8.0), // Opcional: para redondear las esquinas
+                      child: SizedBox(
+                        width: 100.0, // Ajusta el ancho deseado
+                        height:
+                            120.0, // Ajusta la altura deseada para la imagen
+                        child: Image.network(
+                          movie.posterUrl,
+                          fit: BoxFit
+                              .cover, // Esto ajusta la imagen para que cubra el contenedor
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 16.0), // Espacio entre la imagen y el texto
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment:
+                            MainAxisAlignment.center, // Centrar verticalmente
+                        crossAxisAlignment: CrossAxisAlignment
+                            .start, // Alinear el texto a la izquierda
+                        children: [
+                          Text(
+                            movie.title,
+                            style: TextStyle(
+                                fontSize: 18.0, fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                              height: 8.0), // Espacio entre título y subtítulo
+                          Text('Fecha de Estreno: ${movie.releaseDate}'),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class DulceriaPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Dulceria'),
+      ),
+    );
+  }
+}
+
+class BoletosPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Boletos'),
+      ),
+    );
+  }
+}
+
+class CarteleraPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Cartelera'),
+      ),
+    );
+  }
+}
+
+class TaquillaPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Taquilla'),
+      ),
+    );
+  }
+}
+
+class ServicioPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Servicio al Cliente'),
+      ),
+    );
+  }
+}
+
+class Movie {
+  final String title;
+  final String releaseDate;
+  final String posterUrl;
+
+  Movie(
+      {required this.title,
+      required this.releaseDate,
+      required this.posterUrl});
 }
