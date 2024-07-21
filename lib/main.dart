@@ -294,7 +294,7 @@ class _CarteleraContentState extends State<CarteleraContent> {
   Widget build(BuildContext context) {
     return Container(
       color: Color.fromARGB(255, 255, 255, 255),
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(14.0),
       child: Column(
         children: [
           Row(
@@ -386,7 +386,7 @@ class PeliculaItem extends StatelessWidget {
             );
           },
           child: SizedBox(
-            width: 120,
+            width: 100,
             height: 120,
             child: Image.network(
               pelicula.imagenUrl,
@@ -399,9 +399,9 @@ class PeliculaItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(pelicula.sinopsis),
-            const SizedBox(height: 4),
+            const SizedBox(height: 10),
             Text('Idioma: ${pelicula.idioma}'),
-            const SizedBox(height: 4),
+            const SizedBox(height: 10),
             const Text('Horarios:'),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -410,16 +410,16 @@ class PeliculaItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('${entry.key}: ${entry.value.join(', ')}'),
-                    const SizedBox(height: 4),
+                    const SizedBox(height: 10),
                   ],
                 );
               }).toList(),
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: 10),
             Text('Género: ${pelicula.genero}'),
-            const SizedBox(height: 4),
+            const SizedBox(height: 10),
             Text('Clasificación: ${pelicula.clasificacion}'),
-            const SizedBox(height: 4),
+            const SizedBox(height: 10),
             Text('Cines disponibles: ${pelicula.cines.join(', ')}'),
           ],
         ),
@@ -535,7 +535,7 @@ final List<Pelicula> peliculas = [
     },
     genero: 'Animación, Aventura, Comedia',
     clasificacion: 'Todo Público',
-    imagenUrl: 'https://m.media-amazon.com/images/I/91fddE5FYrL._AC_UF894,1000_QL80_.jpg',
+    imagenUrl: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fca.yotoplay.com%2Fproducts%2Ftoy-story&psig=AOvVaw00wBKNHKXyl3x-Hx7VlI3M&ust=1721606418157000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPDor-rptocDFQAAAAAdAAAAABAJ',
     idioma: 'Español',
     cines: [
       'Magic Cinema',
@@ -634,6 +634,72 @@ final List<Pelicula> peliculas = [
       'Multicinema Metro Mall',
       'Cinemark Mall Multiplaza',
       'Cinépolis Cascadas Mall'
+    ],
+  ),
+  Pelicula(
+    nombre: 'Interstellar',
+    sinopsis: 'Un grupo de astronautas viaja a través de un agujero de gusano en busca de un nuevo hogar para la humanidad.',
+    horarios: {
+      "Lunes": ["12:00", "15:00", "18:00", "21:00"],
+      "Martes": ["13:00", "16:00", "19:00", "22:00"],
+      "Miércoles": ["14:00", "17:00", "20:00", "23:00"],
+      "Jueves": ["12:30", "15:30", "18:30", "21:30"],
+      "Viernes": ["13:45", "16:45", "19:45", "22:45"],
+      "Sábado": ["11:30", "14:30", "17:30", "20:30"],
+      "Domingo": ["12:15", "15:15", "18:15", "21:15"]
+    },
+    genero: 'Aventura, Drama, Ciencia Ficción',
+    clasificacion: 'PG-13',
+    imagenUrl: 'https://m.media-amazon.com/images/I/71AslGkVxJL._AC_SY679_.jpg',
+    idioma: 'Inglés',
+    cines: [
+      'Magic Cinema',
+      'Cinemark Mall Multiplaza',
+      'Cinépolis Cascadas Mall',
+    ],
+  ),
+  Pelicula(
+    nombre: 'Avatar',
+    sinopsis: 'Un ex-marine es enviado a Pandora para participar en un programa que le permite habitar el cuerpo de un Na\'vi.',
+    horarios: {
+      "Lunes": ["11:00", "14:00", "17:00", "20:00"],
+      "Martes": ["12:00", "15:00", "18:00", "21:00"],
+      "Miércoles": ["13:00", "16:00", "19:00", "22:00"],
+      "Jueves": ["11:30", "14:30", "17:30", "20:30"],
+      "Viernes": ["12:15", "15:15", "18:15", "21:15"],
+      "Sábado": ["10:30", "13:30", "16:30", "19:30"],
+      "Domingo": ["11:00", "14:00", "17:00", "20:00"]
+    },
+    genero: 'Acción, Aventura, Ciencia Ficción',
+    clasificacion: 'PG-13',
+    imagenUrl: 'https://m.media-amazon.com/images/I/91gDuzJzcsL._AC_SY679_.jpg',
+    idioma: 'Inglés',
+    cines: [
+      'Multicinema Metro Mall',
+      'Cinépolis Cascadas Mall',
+      'Cinemark Mall Multiplaza',
+    ],
+  ),
+  Pelicula(
+    nombre: 'Jurassic Park',
+    sinopsis: 'Un grupo de científicos clona dinosaurios en una isla para crear un parque temático, pero los animales pronto se descontrolan.',
+    horarios: {
+      "Lunes": ["09:00", "12:00", "15:00", "18:00"],
+      "Martes": ["10:00", "13:00", "16:00", "19:00"],
+      "Miércoles": ["11:00", "14:00", "17:00", "20:00"],
+      "Jueves": ["09:30", "12:30", "15:30", "18:30"],
+      "Viernes": ["10:15", "13:15", "16:15", "19:15"],
+      "Sábado": ["08:30", "11:30", "14:30", "17:30"],
+      "Domingo": ["09:45", "12:45", "15:45", "18:45"]
+    },
+    genero: 'Acción, Aventura, Ciencia Ficción',
+    clasificacion: 'PG-13',
+    imagenUrl: 'https://m.media-amazon.com/images/I/71tFmlM7n2L._AC_SY679_.jpg',
+    idioma: 'Español',
+    cines: [
+      'Magic Cinema',
+      'Cinemark Mall Multiplaza',
+      'Cinépolis Cascadas Mall',
     ],
   ),
 ];
