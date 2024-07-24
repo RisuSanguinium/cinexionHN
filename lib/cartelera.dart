@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-
-
-//Cartelera
-
 class CarteleraPage extends StatelessWidget {
   const CarteleraPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Barra de navegación con estilo personalizado
       appBar: AppBar(
         title: const Text('Cartelera'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 20, 1, 27),
       ),
+      // Cuerpo de la página que contiene el contenido principal
       body: const CarteleraContent(),
     );
   }
@@ -39,6 +37,7 @@ class _CarteleraContentState extends State<CarteleraContent> {
     'Cinépolis Cascadas Mall'
   ];
 
+  // Función para filtrar las películas según el idioma y el cine seleccionado
   List<Pelicula> getPeliculasFiltradas() {
     List<Pelicula> peliculasFiltradas = peliculas;
     if (_selectedIdioma != 'Idioma') {
@@ -57,10 +56,11 @@ class _CarteleraContentState extends State<CarteleraContent> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(255, 255, 255, 255),
+      color: const Color.fromARGB(255, 20, 1, 27),
       padding: const EdgeInsets.all(14.0),
       child: Column(
         children: [
+          // Fila de dropdowns para filtrar las películas
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -96,6 +96,8 @@ class _CarteleraContentState extends State<CarteleraContent> {
               ),
             ],
           ),
+          const SizedBox(height: 16.0), // Espaciado entre los elementos
+          // Lista de películas filtradas
           Expanded(
             child: ListView.builder(
               itemCount: getPeliculasFiltradas().length,
@@ -130,6 +132,7 @@ class Pelicula {
   });
 }
 
+// Widget para mostrar un elemento de la lista de películas
 class PeliculaItem extends StatelessWidget {
   final Pelicula pelicula;
 
@@ -138,6 +141,7 @@ class PeliculaItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.white,
       margin: const EdgeInsets.only(bottom: 16.0),
       child: ListTile(
         leading: GestureDetector(
@@ -158,26 +162,27 @@ class PeliculaItem extends StatelessWidget {
             ),
           ),
         ),
-       title: Text(pelicula.nombre),
-subtitle: Column(
-  crossAxisAlignment: CrossAxisAlignment.start,
-  children: [
-    Text(pelicula.sinopsis),
-    const SizedBox(height: 10),
-    Text('Idioma: ${pelicula.idioma}'),
-    const SizedBox(height: 10),
-    Text('Género: ${pelicula.genero}'),
-    const SizedBox(height: 10),
-    Text('Clasificación: ${pelicula.clasificacion}'),
-    const SizedBox(height: 10),
-    Text('Cines disponibles: ${pelicula.cines.join(', ')}'),
-  ],
-),
-),
-);
-}
+        title: Text(pelicula.nombre, style: const TextStyle(fontWeight: FontWeight.bold)),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(pelicula.sinopsis),
+            const SizedBox(height: 10),
+            Text('Idioma: ${pelicula.idioma}'),
+            const SizedBox(height: 10),
+            Text('Género: ${pelicula.genero}'),
+            const SizedBox(height: 10),
+            Text('Clasificación: ${pelicula.clasificacion}'),
+            const SizedBox(height: 10),
+            Text('Cines disponibles: ${pelicula.cines.join(', ')}'),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
+// Widget para mostrar una imagen en pantalla completa
 class FullScreenImage extends StatelessWidget {
   final String imageUrl;
 
@@ -200,6 +205,7 @@ class FullScreenImage extends StatelessWidget {
     );
   }
 }
+
 final List<Pelicula> peliculas = [
    Pelicula(
       nombre: 'Spider-Man: Sin Camino a Casa',
