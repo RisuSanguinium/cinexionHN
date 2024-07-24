@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'ServicioPage.dart';
 import 'Dulceria.dart';
 import 'boletos.dart';
 import 'homePage.dart';
@@ -29,25 +30,4 @@ class MyApp extends StatelessWidget {
       },
     );
   }
-}
-
-class ServicioPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Servicio al Cliente'),
-      ),
-    );
-  }
-}
-
-class Movies {
-  final String title;
-  final String releaseDate;
-  final String posterUrl;
-  Movies(
-      {required this.title,
-      required this.releaseDate,
-      required this.posterUrl});
 }
