@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'taquilla.dart';
 import 'ServicioPage.dart';
 import 'Dulceria.dart';
 import 'boletos.dart';
