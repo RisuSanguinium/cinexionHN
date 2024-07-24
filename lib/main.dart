@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'cartelera.dart';
 
+
 void main() {
   runApp(MyApp());
 }
@@ -688,75 +689,6 @@ class BoletosPage extends StatelessWidget {
     );
   }
 }
-
-//Cartelera
-//Final Cartelera
-//Taquilla
-
-class PeliculaT {
-  final String title;
-  final String releaseDate;
-  final String posterUrl;
-  final String description;
-  final List<Sala> salas;
-
-  PeliculaT({
-    required this.title,
-    required this.releaseDate,
-    required this.posterUrl,
-    required this.description,
-    required this.salas,
-  });
-}
-
-class Sala {
-  final String name;
-  final List<String> asientos;
-  final double precioAdulto;
-  final double precioNino;
-  final String tipoSala;
-
-  Sala({
-    required this.name,
-    required this.asientos,
-    required this.precioAdulto,
-    required this.precioNino,
-    required this.tipoSala,
-  });
-}
-
-/*class TaquillaPageA extends StatefulWidget {
-  @override
-  _TaquillaPageState createState() => _TaquillaPageState();
-}
-
-class _TaquillaPageState extends State<TaquillaPageA> {
-  
-}*/
-
-PeliculaT? _peliculaSeleccionada;
-Sala? _salaSeleccionada;
-int _cantidadAdultos = 0;
-int _cantidadNinos = 0;
-List<String> _asientosSeleccionados = [];
-
-void _onPeliculaSeleccionada(PeliculaT? pelicula) {
-  setState(() {
-    _peliculaSeleccionada = pelicula;
-    _salaSeleccionada =
-        null; // Resetear sala seleccionada al cambiar la película
-    _asientosSeleccionados = []; // Resetear asientos seleccionados
-  });
-}
-
-void _onSalaSeleccionada(Sala? sala) {
-  setState(() {
-    _salaSeleccionada = sala;
-    _asientosSeleccionados =
-        []; // Resetear asientos seleccionados cuando se cambia la sala
-  });
-}
-
 void _onAsientoSeleccionado(String asiento) {
   setState(() {
     if (_asientosSeleccionados.contains(asiento)) {
