@@ -113,7 +113,6 @@ class _CarteleraContentState extends State<CarteleraContent> {
 class Pelicula {
   final String nombre;
   final String sinopsis;
-  final Map<String, List<String>> horarios;
   final String genero;
   final String clasificacion;
   final String imagenUrl;
@@ -123,7 +122,6 @@ class Pelicula {
   Pelicula({
     required this.nombre,
     required this.sinopsis,
-    required this.horarios,
     required this.genero,
     required this.clasificacion,
     required this.imagenUrl,
@@ -221,15 +219,6 @@ final List<Pelicula> peliculas = [
       nombre: 'Spider-Man: Sin Camino a Casa',
       sinopsis:
           'Peter Parker se encuentra en un aprieto después de que su identidad como Spider-Man es revelada.',
-      horarios: {
-        "Lunes": ["10:00", "12:00", "16:00", "19:00"],
-        "Martes": ["11:00", "13:00", "17:00", "20:00"],
-        "Miércoles": ["10:30", "14:30", "18:30", "21:30"],
-        "Jueves": ["09:00", "12:30", "15:30", "19:30"],
-        "Viernes": ["10:45", "13:45", "17:45", "20:45"],
-        "Sábado": ["08:30", "11:30", "14:30", "18:30"],
-        "Domingo": ["09:45", "12:45", "15:45", "19:45"]
-      },
       genero: 'Acción, Aventura, Fantasía',
       clasificacion: 'Todo Público',
       imagenUrl:
@@ -246,15 +235,6 @@ final List<Pelicula> peliculas = [
       nombre: 'Inception',
       sinopsis:
           'Un ladrón de sueños trabaja para implantar una idea en la mente de alguien mientras están dormidos.',
-      horarios: {
-        "Lunes": ["09:00", "11:00", "13:00", "15:00"],
-        "Martes": ["10:00", "12:00", "14:00", "16:00"],
-        "Miércoles": ["11:30", "13:30", "15:30", "17:30"],
-        "Jueves": ["10:30", "12:30", "14:30", "16:30"],
-        "Viernes": ["09:45", "11:45", "13:45", "15:45"],
-        "Sábado": ["10:15", "12:15", "14:15", "16:15"],
-        "Domingo": ["11:00", "13:00", "15:00", "17:00"]
-      },
       genero: 'Acción, Aventura, Ciencia ficción',
       clasificacion: 'Adultos',
       imagenUrl:
@@ -271,15 +251,6 @@ final List<Pelicula> peliculas = [
       nombre: 'El Padrino',
       sinopsis:
           'La historia de la familia Corleone y su lucha por el poder en el mundo del crimen organizado en Nueva York.',
-      horarios: {
-        "Lunes": ["11:00", "14:00", "17:00", "20:00"],
-        "Martes": ["10:00", "13:00", "16:00", "19:00"],
-        "Miércoles": ["12:00", "15:00", "18:00", "21:00"],
-        "Jueves": ["11:30", "14:30", "17:30", "20:30"],
-        "Viernes": ["10:45", "13:45", "16:45", "19:45"],
-        "Sábado": ["09:00", "12:00", "15:00", "18:00"],
-        "Domingo": ["10:00", "13:00", "16:00", "19:00"]
-      },
       genero: 'Crimen, Drama',
       clasificacion: 'Adultos',
       imagenUrl:
@@ -296,15 +267,6 @@ final List<Pelicula> peliculas = [
       nombre: 'Toy Story',
       sinopsis:
           'Los juguetes de Andy cobran vida cuando no hay humanos alrededor y deben enfrentarse a la llegada de un nuevo juguete, Buzz Lightyear.',
-      horarios: {
-        "Lunes": ["09:00", "11:00", "13:00", "15:00"],
-        "Martes": ["10:00", "12:00", "14:00", "16:00"],
-        "Miércoles": ["11:30", "13:30", "15:30", "17:30"],
-        "Jueves": ["10:30", "12:30", "14:30", "16:30"],
-        "Viernes": ["09:45", "11:45", "13:45", "15:45"],
-        "Sábado": ["10:15", "12:15", "14:15", "16:15"],
-        "Domingo": ["11:00", "13:00", "15:00", "17:00"]
-      },
       genero: 'Animación, Aventura, Comedia',
       clasificacion: 'Todo Público',
       imagenUrl:
@@ -321,15 +283,6 @@ final List<Pelicula> peliculas = [
       nombre: 'Matrix',
       sinopsis:
           'Un hacker descubre la verdad sobre su realidad y su papel en la guerra contra sus controladores.',
-      horarios: {
-        "Lunes": ["10:00", "13:00", "16:00", "19:00"],
-        "Martes": ["11:00", "14:00", "17:00", "20:00"],
-        "Miércoles": ["09:30", "12:30", "15:30", "18:30"],
-        "Jueves": ["10:00", "13:00", "16:00", "19:00"],
-        "Viernes": ["09:45", "12:45", "15:45", "18:45"],
-        "Sábado": ["10:15", "13:15", "16:15", "19:15"],
-        "Domingo": ["11:00", "14:00", "17:00", "20:00"]
-      },
       genero: 'Acción, Ciencia ficción',
       clasificacion: 'Adultos',
       imagenUrl:
@@ -346,15 +299,6 @@ final List<Pelicula> peliculas = [
       nombre: 'Titanic',
       sinopsis:
           'Una historia de amor y tragedia a bordo del famoso barco Titanic.',
-      horarios: {
-        "Lunes": ["10:00", "13:00", "16:00", "19:00"],
-        "Martes": ["11:00", "14:00", "17:00", "20:00"],
-        "Miércoles": ["09:30", "12:30", "15:30", "18:30"],
-        "Jueves": ["10:00", "13:00", "16:00", "19:00"],
-        "Viernes": ["09:45", "12:45", "15:45", "18:45"],
-        "Sábado": ["10:15", "13:15", "16:15", "19:15"],
-        "Domingo": ["11:00", "14:00", "17:00", "20:00"]
-      },
       genero: 'Drama, Romance',
       clasificacion: 'Todo Público',
       imagenUrl:
@@ -371,15 +315,6 @@ final List<Pelicula> peliculas = [
       nombre: 'Avengers: Endgame',
       sinopsis:
           'Después de los devastadores eventos de Avengers: Infinity War, los Vengadores se reúnen para revertir las acciones de Thanos y restaurar el orden en el universo.',
-      horarios: {
-        "Lunes": ["11:00", "14:00", "17:00", "20:00"],
-        "Martes": ["10:00", "13:00", "16:00", "19:00"],
-        "Miércoles": ["12:00", "15:00", "18:00", "21:00"],
-        "Jueves": ["11:30", "14:30", "17:30", "20:30"],
-        "Viernes": ["10:45", "13:45", "16:45", "19:45"],
-        "Sábado": ["09:00", "12:00", "15:00", "18:00"],
-        "Domingo": ["10:00", "13:00", "16:00", "19:00"]
-      },
       genero: 'Acción, Aventura, Ciencia ficción',
       clasificacion: 'Todo Público',
       imagenUrl:
@@ -396,15 +331,6 @@ final List<Pelicula> peliculas = [
       nombre: 'El Rey León',
       sinopsis:
           'Un joven león debe reclamar su derecho a ser rey después de la trágica muerte de su padre.',
-      horarios: {
-        "Lunes": ["10:00", "12:00", "14:00", "16:00"],
-        "Martes": ["11:00", "13:00", "15:00", "17:00"],
-        "Miércoles": ["09:30", "11:30", "13:30", "15:30"],
-        "Jueves": ["10:00", "12:00", "14:00", "16:00"],
-        "Viernes": ["09:45", "11:45", "13:45", "15:45"],
-        "Sábado": ["10:15", "12:15", "14:15", "16:15"],
-        "Domingo": ["11:00", "13:00", "15:00", "17:00"]
-      },
       genero: 'Animación, Aventura, Drama',
       clasificacion: 'Todo Público',
       imagenUrl:
@@ -421,15 +347,6 @@ final List<Pelicula> peliculas = [
       nombre: 'Interstellar',
       sinopsis:
           'Un grupo de astronautas viaja a través de un agujero de gusano en busca de un nuevo hogar para la humanidad.',
-      horarios: {
-        "Lunes": ["12:00", "15:00", "18:00", "21:00"],
-        "Martes": ["13:00", "16:00", "19:00", "22:00"],
-        "Miércoles": ["14:00", "17:00", "20:00", "23:00"],
-        "Jueves": ["12:30", "15:30", "18:30", "21:30"],
-        "Viernes": ["13:45", "16:45", "19:45", "22:45"],
-        "Sábado": ["11:30", "14:30", "17:30", "20:30"],
-        "Domingo": ["12:15", "15:15", "18:15", "21:15"]
-      },
       genero: 'Aventura, Drama, Ciencia Ficción',
       clasificacion: 'PG-13',
       imagenUrl:
@@ -445,15 +362,6 @@ final List<Pelicula> peliculas = [
       nombre: 'Avatar',
       sinopsis:
           'Un ex-marine es enviado a Pandora para participar en un programa que le permite habitar el cuerpo de un Na\'vi.',
-      horarios: {
-        "Lunes": ["11:00", "14:00", "17:00", "20:00"],
-        "Martes": ["12:00", "15:00", "18:00", "21:00"],
-        "Miércoles": ["13:00", "16:00", "19:00", "22:00"],
-        "Jueves": ["11:30", "14:30", "17:30", "20:30"],
-        "Viernes": ["12:15", "15:15", "18:15", "21:15"],
-        "Sábado": ["10:30", "13:30", "16:30", "19:30"],
-        "Domingo": ["11:00", "14:00", "17:00", "20:00"]
-      },
       genero: 'Acción, Aventura, Ciencia Ficción',
       clasificacion: 'PG-13',
       imagenUrl:
@@ -469,15 +377,6 @@ final List<Pelicula> peliculas = [
       nombre: 'Jurassic Park',
       sinopsis:
           'Un grupo de científicos clona dinosaurios en una isla para crear un parque temático, pero los animales pronto se descontrolan.',
-      horarios: {
-        "Lunes": ["09:00", "12:00", "15:00", "18:00"],
-        "Martes": ["10:00", "13:00", "16:00", "19:00"],
-        "Miércoles": ["11:00", "14:00", "17:00", "20:00"],
-        "Jueves": ["09:30", "12:30", "15:30", "18:30"],
-        "Viernes": ["10:15", "13:15", "16:15", "19:15"],
-        "Sábado": ["08:30", "11:30", "14:30", "17:30"],
-        "Domingo": ["09:45", "12:45", "15:45", "18:45"]
-      },
       genero: 'Acción, Aventura, Ciencia Ficción',
       clasificacion: 'PG-13',
       imagenUrl:
