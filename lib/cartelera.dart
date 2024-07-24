@@ -158,38 +158,24 @@ class PeliculaItem extends StatelessWidget {
             ),
           ),
         ),
-        title: Text(pelicula.nombre),
-        subtitle: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(pelicula.sinopsis),
-            const SizedBox(height: 10),
-            Text('Idioma: ${pelicula.idioma}'),
-            const SizedBox(height: 10),
-            const Text('Horarios:'),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: pelicula.horarios.entries.map((entry) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('${entry.key}: ${entry.value.join(', ')}'),
-                    const SizedBox(height: 10),
-                  ],
-                );
-              }).toList(),
-            ),
-            const SizedBox(height: 10),
-            Text('Género: ${pelicula.genero}'),
-            const SizedBox(height: 10),
-            Text('Clasificación: ${pelicula.clasificacion}'),
-            const SizedBox(height: 10),
-            Text('Cines disponibles: ${pelicula.cines.join(', ')}'),
-          ],
-        ),
-      ),
-    );
-  }
+       title: Text(pelicula.nombre),
+subtitle: Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(pelicula.sinopsis),
+    const SizedBox(height: 10),
+    Text('Idioma: ${pelicula.idioma}'),
+    const SizedBox(height: 10),
+    Text('Género: ${pelicula.genero}'),
+    const SizedBox(height: 10),
+    Text('Clasificación: ${pelicula.clasificacion}'),
+    const SizedBox(height: 10),
+    Text('Cines disponibles: ${pelicula.cines.join(', ')}'),
+  ],
+),
+),
+);
+}
 }
 
 class FullScreenImage extends StatelessWidget {
