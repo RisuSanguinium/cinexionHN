@@ -9,7 +9,7 @@ class CarteleraPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Cartelera'),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 20, 1, 27),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255)
       ),
       // Cuerpo de la página que contiene el contenido principal
       body: const CarteleraContent(),
