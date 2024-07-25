@@ -56,7 +56,7 @@ class _CarteleraContentState extends State<CarteleraContent> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromARGB(255, 20, 1, 27),
+      color: Color.fromARGB(255, 255, 255, 255),
       padding: const EdgeInsets.all(14.0),
       child: Column(
         children: [
