@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+
+// Página principal de la cartelera
 class CarteleraPage extends StatelessWidget {
   const CarteleraPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Barra de navegación con estilo personalizado
+      // Barra de navegación con título centrado y fondo blanco
       appBar: AppBar(
         title: const Text('Cartelera'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 255, 255, 255)
+        backgroundColor: Colors.white,
       ),
       // Cuerpo de la página que contiene el contenido principal
       body: const CarteleraContent(),
@@ -17,6 +19,7 @@ class CarteleraPage extends StatelessWidget {
   }
 }
 
+// Widget que contiene el contenido de la cartelera
 class CarteleraContent extends StatefulWidget {
   const CarteleraContent({super.key});
 
@@ -24,10 +27,13 @@ class CarteleraContent extends StatefulWidget {
   _CarteleraContentState createState() => _CarteleraContentState();
 }
 
+// Estado del widget CarteleraContent
 class _CarteleraContentState extends State<CarteleraContent> {
+  // Variables para almacenar las selecciones de idioma y cine
   String _selectedIdioma = 'Idioma';
   String _selectedCine = 'Cines';
 
+  // Listas de opciones para los dropdowns
   final List<String> idiomas = ['Idioma', 'Español', 'Inglés'];
   final List<String> cines = [
     'Cines',
@@ -37,7 +43,7 @@ class _CarteleraContentState extends State<CarteleraContent> {
     'Cinépolis Cascadas Mall'
   ];
 
-  // Función para filtrar las películas según el idioma y el cine seleccionado
+  // Función para filtrar las películas según el idioma y el cine seleccionados
   List<Pelicula> getPeliculasFiltradas() {
     List<Pelicula> peliculasFiltradas = peliculas;
     if (_selectedIdioma != 'Idioma') {
@@ -55,8 +61,11 @@ class _CarteleraContentState extends State<CarteleraContent> {
 
   @override
   Widget build(BuildContext context) {
+    // Obtiene el ancho de la pantalla
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
-      color: Color.fromARGB(255, 255, 255, 255),
+      color: Colors.white,
       padding: const EdgeInsets.all(14.0),
       child: Column(
         children: [
@@ -102,7 +111,10 @@ class _CarteleraContentState extends State<CarteleraContent> {
             child: ListView.builder(
               itemCount: getPeliculasFiltradas().length,
               itemBuilder: (context, index) {
-                return PeliculaItem(pelicula: getPeliculasFiltradas()[index]);
+                return PeliculaItem(
+                  pelicula: getPeliculasFiltradas()[index],
+                  screenWidth: screenWidth,
+                );
               },
             ),
           ),
@@ -112,6 +124,7 @@ class _CarteleraContentState extends State<CarteleraContent> {
   }
 }
 
+// Clase que representa una película
 class Pelicula {
   final String nombre;
   final String sinopsis;
@@ -135,8 +148,9 @@ class Pelicula {
 // Widget para mostrar un elemento de la lista de películas
 class PeliculaItem extends StatelessWidget {
   final Pelicula pelicula;
+  final double screenWidth;
 
-  const PeliculaItem({super.key, required this.pelicula});
+  const PeliculaItem({super.key, required this.pelicula, required this.screenWidth});
 
   @override
   Widget build(BuildContext context) {
@@ -144,18 +158,18 @@ class PeliculaItem extends StatelessWidget {
       color: Colors.white,
       margin: const EdgeInsets.only(bottom: 16.0),
       child: ListTile(
+        // Imagen de la película, que al tocarse muestra una vista de pantalla completa
         leading: GestureDetector(
           onTap: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) =>
-                      FullScreenImage(imageUrl: pelicula.imagenUrl)),
+                  builder: (context) => FullScreenImage(imageUrl: pelicula.imagenUrl)),
             );
           },
           child: SizedBox(
-            width: 100,
-            height: 120,
+            width: screenWidth * 0.3, // Ajuste del tamaño de la imagen según el ancho de la pantalla
+            height: screenWidth * 0.4,
             child: Image.network(
               pelicula.imagenUrl,
               fit: BoxFit.cover,
