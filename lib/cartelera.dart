@@ -4,77 +4,18 @@ import 'package:flutter/material.dart';
 class CarteleraPage extends StatelessWidget {
   const CarteleraPage({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Barra de navegación con el título de la página
+      // Barra de navegación con título centrado y fondo blanco
       appBar: AppBar(
-        title: const Text('¡Compra tus boletos!'),
+        title: const Text('Cartelera'),
+        centerTitle: true,
+        backgroundColor: Colors.white,
       ),
-      // Cuerpo de la página que contiene una lista de películas
-      body: ListView.builder(
-        itemCount: peliculas.length, // Número de elementos en la lista
-        itemBuilder: (context, index) {
-          final movie = peliculas[index];
-          return Container(
-            height: 250.0, // Altura del contenedor de cada película
-            margin: const EdgeInsets.symmetric(
-              vertical: 8.0,
-              horizontal: 16.0,
-            ), // Margen alrededor de cada contenedor
-            child: Card(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0), // Padding dentro de la tarjeta
-                child: Row(
-                  children: [
-                    // Imagen de la película con esquinas redondeadas
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: SizedBox(
-                        width: 100.0, // Ancho de la imagen
-                        height: 150.0, // Altura de la imagen
-                        child: Image.network(
-                          movie.imagenUrl,
-                          fit: BoxFit.cover, // Ajuste de la imagen para cubrir el contenedor
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 16.0), // Espacio entre la imagen y el texto
-                    Expanded(
-                      // Columna que contiene el título y la sinopsis de la película
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center, // Centrar verticalmente
-                        crossAxisAlignment: CrossAxisAlignment.start, // Alinear el texto a la izquierda
-                        children: [
-                          // Título de la película
-                          Text(
-                            movie.nombre,
-                            style: const TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 8.0), // Espacio entre título y sinopsis
-                          // Sinopsis de la película
-                          Text(movie.sinopsis),
-                          // Botón para ver más detalles de la película
-                          TextButton(
-                            child: const Text('¡Ver!'),
-                            onPressed: () {
-                              // Acción cuando se presiona el botón
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          );
-        },
-      ),
+      // Cuerpo de la página que contiene el contenido principal
+      
+      body: const CarteleraContent(),
     );
   }
 }
