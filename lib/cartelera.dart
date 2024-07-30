@@ -360,7 +360,7 @@ final List<Pelicula> peliculas = [
     genero: 'Crimen, Drama',
     clasificacion: 'Adultos',
     imagenUrl:
-        'https://es.web.img3.acsta.net/pictures/18/06/12/12/12/0117051.jpg?coixp=49&coiyp=27',
+        'https://doblaje.fandom.com/es/wiki/El_Padrino?file=Elpadrino.jpg',
     idioma: 'Inglés',
     cines: [
       'Magic Cinema',
@@ -471,7 +471,7 @@ final List<Pelicula> peliculas = [
     genero: 'Acción, Aventura, Ciencia Ficción',
     clasificacion: 'PG-13',
     imagenUrl:
-        'https://www.imdb.com/title/tt1630029/mediaviewer/rm92486145/?ref_=tt_ov_i',
+        'https://jhmovie.fandom.com/wiki/Avatar:_The_Way_of_Water?file=Avatar_The_Way_of_Water_poster.jpg',
     idioma: 'Español',
     cines: [
       'Multicinema Metro Mall',
