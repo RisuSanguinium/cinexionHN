@@ -63,6 +63,7 @@ class _CarteleraContentState extends State<CarteleraContent> {
   @override
   Widget build(BuildContext context) {
     // Obtiene el ancho de la pantalla para usar en el diseño
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
       color: Colors.white,
@@ -121,7 +122,8 @@ class _CarteleraContentState extends State<CarteleraContent> {
                 final movie = getPeliculasFiltradas()[
                     index]; // Obtiene la película en la posición actual
                 return Container(
-                  height: 250.0,
+                  height:
+                      280.0, // Ajustado para incluir la clasificación y el idioma
                   margin: EdgeInsets.symmetric(
                       vertical: 8.0,
                       horizontal: 16.0), // Margen alrededor del contenedor
@@ -129,6 +131,8 @@ class _CarteleraContentState extends State<CarteleraContent> {
                     child: Padding(
                       padding: EdgeInsets.all(8.0), // Padding dentro de la card
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment
+                            .start, // Alinea la fila en la parte superior
                         children: [
                           // Imagen de la película
                           ClipRRect(
@@ -149,8 +153,6 @@ class _CarteleraContentState extends State<CarteleraContent> {
                                   16.0), // Espacio entre la imagen y el texto
                           Expanded(
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment
-                                  .center, // Centra verticalmente el contenido
                               crossAxisAlignment: CrossAxisAlignment
                                   .start, // Alinea el texto a la izquierda
                               children: [
@@ -166,6 +168,33 @@ class _CarteleraContentState extends State<CarteleraContent> {
                                         8.0), // Espacio entre el título y la sinopsis
                                 // Sinopsis de la película
                                 Text('${movie.sinopsis}'),
+                                SizedBox(
+                                    height:
+                                        8.0), // Espacio entre la sinopsis y la clasificación/idioma
+                                // Clasificación y idioma de la película
+                                Row(
+                                  children: [
+                                    // Clasificación de la película
+                                    Text(
+                                      'Clasificación: ${movie.clasificacion}',
+                                      style: TextStyle(
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    SizedBox(
+                                        width:
+                                            16.0), // Espacio entre la clasificación y el idioma
+                                    // Idioma de la película
+                                    Text(
+                                      'Idioma: ${movie.idioma}',
+                                      style: TextStyle(
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                    height: 8.0), // Espacio antes del botón
                                 // Botón para ver detalles de la película
                                 TextButton(
                                   child: const Text('¡Ver!'),
