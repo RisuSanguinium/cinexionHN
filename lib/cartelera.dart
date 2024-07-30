@@ -11,7 +11,7 @@ class CarteleraPage extends StatelessWidget {
     return Scaffold(
       // Barra de navegación con título centrado y fondo blanco
       appBar: AppBar(
-        title: const Text('¡Compra tus boletos!'),
+        title: const Text('Cartelera'),
         centerTitle: true,
         backgroundColor: Colors.white,
       ),
