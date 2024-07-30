@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'homePage.dart';
 
 // Página principal de la cartelera
 class CarteleraPage extends StatelessWidget {
@@ -12,6 +13,13 @@ class CarteleraPage extends StatelessWidget {
         title: const Text('Cartelera'),
         centerTitle: true,
         backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+          },
+        ),
       ),
       // Cuerpo de la página que contiene el contenido principal
       body: const CarteleraContent(),

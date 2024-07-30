@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'clases/peliculas.dart';
+import 'homePage.dart';
 //Boleteria
 
 class BoletosPage extends StatelessWidget {
@@ -282,6 +283,13 @@ class BoletosPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('¡Compra tus boletos!'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+          },
+        ),
       ),
       body: ListView.builder(
         itemCount: peliculas.length,

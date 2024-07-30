@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'homePage.dart';
 
 //Taquilla
 
@@ -254,6 +254,13 @@ class _TaquillaPageState extends State<TaquillaPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Taquilla'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+          },
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'homePage.dart';
 
 class EstrenosPage extends StatelessWidget {
   final List<Movies> upcomingMovies = [
@@ -45,6 +46,13 @@ class EstrenosPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('¡Explora nuestros nuevos estrenos!'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+          },
+        ),
       ),
       body: ListView.builder(
         itemCount: upcomingMovies.length,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'homePage.dart';
 
 class ServicioPage extends StatelessWidget {
   @override
@@ -6,7 +7,16 @@ class ServicioPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
             backgroundColor: Color.fromARGB(255, 40, 142, 188),
-            title: const Text("¿Como podemos ayudarte?")),
+            title: const Text("¿Como podemos ayudarte?"),
+            leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+            Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => HomePage()));
+            },
+          ), 
+        ),
+            
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
