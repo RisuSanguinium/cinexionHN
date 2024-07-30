@@ -180,7 +180,7 @@ class _CarteleraContentState extends State<CarteleraContent> {
                                 Align(
                                   alignment: Alignment.centerRight,
                                   child: TextButton(
-                                    child: const Text('¡Ver!'),
+                                    child: const Text('¡Comprar Boletos!'),
                                     onPressed: () {},
                                   ),
                                 ),
