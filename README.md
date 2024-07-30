@@ -14,6 +14,7 @@ INTEGRANTES:
 José Alexander Rubio González 0801199907671  
 Asshlly Michelle Castro Irias  1503200400378   
 Saudy Yanquel Valladares Castro  0801200209543
+
 Edison Agusto Amaya  130220030014
 
 Ricardo Ernesto Carias   0801200205495
