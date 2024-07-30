@@ -349,7 +349,7 @@ final List<Pelicula> peliculas = [
     genero: 'Crimen, Drama',
     clasificacion: 'Adultos',
     imagenUrl:
-        'https://doblaje.fandom.com/es/wiki/El_Padrino?file=Elpadrino.jpg',
+        'https://th.bing.com/th/id/R.9e2ea92e1818c2e868345aadf66d7c1f?rik=stzE%2b2%2bZBXTgBA&riu=http%3a%2f%2fes.web.img3.acsta.net%2fr_1280_720%2fpictures%2f18%2f06%2f12%2f12%2f12%2f0117051.jpg&ehk=pg6i1TMhA4GXfeexZ2aWqycrmqNUNG5thjS38veZXyQ%3d&risl=&pid=ImgRaw&r=0',
     idioma: 'Inglés',
     cines: [
       'Magic Cinema',
@@ -445,7 +445,7 @@ final List<Pelicula> peliculas = [
     genero: 'Aventura, Drama, Ciencia Ficción',
     clasificacion: 'PG-13',
     imagenUrl:
-        'https://www.imdb.com/title/tt0816692/mediaviewer/rm4043724800/?ref_=tt_ov_i',
+        'https://cdna.artstation.com/p/assets/images/images/023/819/008/large/courtney-autumn-martin-interstellar-trap-14colors-redo-web.jpg?1580427202',
     idioma: 'Inglés',
     cines: [
       'Magic Cinema',
@@ -460,7 +460,7 @@ final List<Pelicula> peliculas = [
     genero: 'Acción, Aventura, Ciencia Ficción',
     clasificacion: 'PG-13',
     imagenUrl:
-        'https://jhmovie.fandom.com/wiki/Avatar:_The_Way_of_Water?file=Avatar_The_Way_of_Water_poster.jpg',
+        'https://th.bing.com/th/id/R.cc0099b4b07e5096813b97c690f39574?rik=%2fNY2I9DlXBuHyw&riu=http%3a%2f%2fwww.impawards.com%2f2009%2fposters%2favatar_ver3.jpg&ehk=1circxNjxFd%2fLut7X%2bXNMxPiiofhWOZbhkPGmKIgfrE%3d&risl=&pid=ImgRaw&r=0',
     idioma: 'Español',
     cines: [
       'Multicinema Metro Mall',
