@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 // Página principal de la cartelera
@@ -64,27 +62,24 @@ class _CarteleraContentState extends State<CarteleraContent> {
 
   @override
   Widget build(BuildContext context) {
-    // Obtiene el ancho de la pantalla para usar en el diseño
+    // Obtener el ancho de la pantalla del dispositivo
     double screenWidth = MediaQuery.of(context).size.width;
-    // ignore_for_file: unused_local_variable
 
     return Container(
       color: Colors.white,
-      padding: const EdgeInsets.all(14.0), // Padding alrededor del contenido
+      padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
-          // Fila de dropdowns para filtrar las películas
+          // Fila de dropdowns para seleccionar idioma y cine
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              // Dropdown para seleccionar el idioma
               DropdownButton<String>(
                 value: _selectedIdioma,
                 hint: const Text('Selecciona un idioma'),
                 onChanged: (String? newValue) {
                   setState(() {
-                    _selectedIdioma =
-                        newValue!; // Actualiza el estado con el nuevo valor
+                    _selectedIdioma = newValue!;
                   });
                 },
                 items: idiomas.map<DropdownMenuItem<String>>((String value) {
@@ -94,14 +89,12 @@ class _CarteleraContentState extends State<CarteleraContent> {
                   );
                 }).toList(),
               ),
-              // Dropdown para seleccionar el cine
               DropdownButton<String>(
                 value: _selectedCine,
                 hint: const Text('Selecciona un cine'),
                 onChanged: (String? newValue) {
                   setState(() {
-                    _selectedCine =
-                        newValue!; // Actualiza el estado con el nuevo valor
+                    _selectedCine = newValue!;
                   });
                 },
                 items: cines.map<DropdownMenuItem<String>>((String value) {
@@ -113,95 +106,83 @@ class _CarteleraContentState extends State<CarteleraContent> {
               ),
             ],
           ),
-          const SizedBox(
-              height:
-                  16.0), // Espaciado entre los dropdowns y la lista de películas
+          const SizedBox(height: 10.0),
           // Lista de películas filtradas
           Expanded(
             child: ListView.builder(
-              itemCount: getPeliculasFiltradas()
-                  .length, // Número de elementos en la lista
+              itemCount: getPeliculasFiltradas().length,
               itemBuilder: (context, index) {
-                final movie = getPeliculasFiltradas()[
-                    index]; // Obtiene la película en la posición actual
+                final movie = getPeliculasFiltradas()[index];
                 return Container(
-                  height:
-                      280.0, // Ajustado para incluir la clasificación y el idioma
-                  margin: EdgeInsets.symmetric(
-                      vertical: 8.0,
-                      horizontal: 16.0), // Margen alrededor del contenedor
+                  width: screenWidth * 0.9, // Ancho ajustado según la pantalla
+                  height: 280.0,
+                  margin: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Card(
                     child: Padding(
-                      padding: EdgeInsets.all(8.0), // Padding dentro de la card
+                      padding: const EdgeInsets.all(8.0),
                       child: Row(
-                        crossAxisAlignment: CrossAxisAlignment
-                            .start, // Alinea la fila en la parte superior
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Imagen de la película
+                          // Imagen de la película con bordes redondeados
                           ClipRRect(
-                            borderRadius: BorderRadius.circular(
-                                8.0), // Redondea las esquinas de la imagen
+                            borderRadius: BorderRadius.circular(8.0),
                             child: SizedBox(
-                              width: 100.0, // Ancho de la imagen
-                              height: 150.0, // Altura de la imagen
+                              width: screenWidth *
+                                  0.3, // Ajuste del ancho de la imagen
+                              height: 150.0,
                               child: Image.network(
-                                movie.imagenUrl, // URL de la imagen
-                                fit: BoxFit
-                                    .cover, // Ajusta la imagen para que cubra el contenedor
+                                movie.imagenUrl,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                          SizedBox(
-                              width:
-                                  16.0), // Espacio entre la imagen y el texto
+                          const SizedBox(width: 16.0),
+                          // Información de la película
                           Expanded(
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment
-                                  .start, // Alinea el texto a la izquierda
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 // Título de la película
                                 Text(
                                   movie.nombre,
-                                  style: TextStyle(
-                                      fontSize: 18.0,
+                                  style: const TextStyle(
+                                      fontSize: 16.0,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(
-                                    height:
-                                        8.0), // Espacio entre el título y la sinopsis
+                                const SizedBox(height: 8.0),
                                 // Sinopsis de la película
-                                Text('${movie.sinopsis}'),
-                                SizedBox(
-                                    height:
-                                        8.0), // Espacio entre la sinopsis y la clasificación/idioma
-                                // Clasificación y idioma de la película
+                                Text(
+                                  movie.sinopsis,
+                                  maxLines: 3,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                const SizedBox(height: 8.0),
+                                // Clasificación e idioma de la película
                                 Row(
                                   children: [
-                                    // Clasificación de la película
                                     Text(
                                       'Clasificación: ${movie.clasificacion}',
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w500),
                                     ),
-                                    SizedBox(
-                                        width:
-                                            16.0), // Espacio entre la clasificación y el idioma
-                                    // Idioma de la película
+                                    const SizedBox(width: 16.0),
                                     Text(
                                       'Idioma: ${movie.idioma}',
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w500),
                                     ),
                                   ],
                                 ),
-                                SizedBox(
-                                    height: 8.0), // Espacio antes del botón
-                                // Botón para ver detalles de la película
-                                TextButton(
-                                  child: const Text('¡Comprar Boleto!'),
-                                  onPressed: () {},
+                                const SizedBox(height: 8.0),
+                                // Botón para ver más detalles de la película
+                                Align(
+                                  alignment: Alignment.centerRight,
+                                  child: TextButton(
+                                    child: const Text('¡Ver!'),
+                                    onPressed: () {},
+                                  ),
                                 ),
                               ],
                             ),
