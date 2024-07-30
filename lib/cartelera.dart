@@ -356,7 +356,7 @@ final List<Pelicula> peliculas = [
       genero: 'Aventura, Drama, Ciencia Ficción',
       clasificacion: 'PG-13',
       imagenUrl:
-          'https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10543523_p_v8_as.jpg',
+          'https://www.imdb.com/title/tt0816692/mediaviewer/rm4043724800/?ref_=tt_ov_i',
       idioma: 'Inglés',
       cines: [
         'Magic Cinema',
@@ -371,8 +371,8 @@ final List<Pelicula> peliculas = [
       genero: 'Acción, Aventura, Ciencia Ficción',
       clasificacion: 'PG-13',
       imagenUrl:
-          'https://pics.filmaffinity.com/avatar_the_way_of_water-722646748-mmed.jpg',
-      idioma: 'Inglés',
+          'https://www.imdb.com/title/tt1630029/mediaviewer/rm92486145/?ref_=tt_ov_i',
+      idioma: 'Español',
       cines: [
         'Multicinema Metro Mall',
         'Cinépolis Cascadas Mall',
