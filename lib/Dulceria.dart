@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'homePage.dart';
 /*Dulceria*/
 class Combos {
   final String nombre;
@@ -98,6 +98,13 @@ final List<Combos> combos = [
     return Scaffold(
       appBar: AppBar(
         title: Text('Dulceria'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+          },
+        ),
       ),
        body: ListView.builder(
         itemCount: combos.length,
