@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable
+
 
 import 'package:flutter/material.dart';
 
@@ -66,6 +66,7 @@ class _CarteleraContentState extends State<CarteleraContent> {
   Widget build(BuildContext context) {
     // Obtiene el ancho de la pantalla para usar en el diseño
     double screenWidth = MediaQuery.of(context).size.width;
+    // ignore_for_file: unused_local_variable
 
     return Container(
       color: Colors.white,
