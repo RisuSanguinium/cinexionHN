@@ -200,7 +200,7 @@ class _CarteleraContentState extends State<CarteleraContent> {
                                     height: 8.0), // Espacio antes del botón
                                 // Botón para ver detalles de la película
                                 TextButton(
-                                  child: const Text('¡Ver!'),
+                                  child: const Text('¡Comprar Boleto!'),
                                   onPressed: () {},
                                 ),
                               ],
