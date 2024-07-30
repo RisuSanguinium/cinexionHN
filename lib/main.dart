@@ -1,34 +1,33 @@
 import 'package:flutter/material.dart';
-import 'taquilla.dart';
-import 'ServicioPage.dart';
-import 'Dulceria.dart';
-import 'boletos.dart';
-import 'homePage.dart';
-import 'estrenos.dart';
-import 'cartelera.dart';
+import 'package:flutter/services.dart';
+import '../Authtentication/login.dart';
 
 void main() {
-  runApp(MyApp());
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    statusBarBrightness: Brightness.dark,
+    systemNavigationBarColor: Colors.transparent,
+    systemNavigationBarDividerColor: Colors.transparent,
+    systemNavigationBarIconBrightness: Brightness.dark,
+    statusBarIconBrightness: Brightness.dark,
+  ));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Cinexion',
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomePage(),
-        '/estrenos': (context) => EstrenosPage(),
-        '/dulceria': (context) => DulceriaPage(),
-        '/boletos': (context) => BoletosPage(),
-        '/taquilla': (context) => TaquillaPage(),
-        '/cartelera': (context) => CarteleraPage(),
-        '/servicio': (context) => ServicioPage(),
-      },
+      home: const LoginScreen(),
     );
   }
 }
