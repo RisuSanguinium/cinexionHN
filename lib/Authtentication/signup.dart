@@ -22,7 +22,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //SingleChildScrollView to have an scrol in the screen
+      
       body: Center(
         child: SingleChildScrollView(
           child: Form(
@@ -32,7 +32,7 @@ class _SignUpState extends State<SignUp> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  //We will copy the previous textfield we designed to avoid time consuming
+                
 
                   const ListTile(
                     title: Text(
@@ -42,7 +42,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
 
-                  //As we assigned our controller to the textformfields
+                 
 
                   Container(
                     margin: EdgeInsets.all(8),
@@ -67,7 +67,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
 
-                  //Password field
+            
                   Container(
                     margin: const EdgeInsets.all(8),
                     padding:
@@ -90,9 +90,9 @@ class _SignUpState extends State<SignUp> {
                           hintText: "Password",
                           suffixIcon: IconButton(
                               onPressed: () {
-                                //In here we will create a click to show and hide the password a toggle button
+                                
                                 setState(() {
-                                  //toggle button
+                                
                                   isVisible = !isVisible;
                                 });
                               },
@@ -102,8 +102,6 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
 
-                  //Confirm Password field
-                  // Now we check whether password matches or not
                   Container(
                     margin: const EdgeInsets.all(8),
                     padding:
@@ -128,9 +126,9 @@ class _SignUpState extends State<SignUp> {
                           hintText: "Password",
                           suffixIcon: IconButton(
                               onPressed: () {
-                                //In here we will create a click to show and hide the password a toggle button
+                               
                                 setState(() {
-                                  //toggle button
+                              
                                   isVisible = !isVisible;
                                 });
                               },
@@ -141,7 +139,7 @@ class _SignUpState extends State<SignUp> {
                   ),
 
                   const SizedBox(height: 10),
-                  //Login button
+                
                   Container(
                     height: 55,
                     width: MediaQuery.of(context).size.width * .9,
@@ -151,7 +149,7 @@ class _SignUpState extends State<SignUp> {
                     child: TextButton(
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            //Login method will be here
+                
 
                             final db = DatabaseHelper();
                             db
@@ -159,7 +157,7 @@ class _SignUpState extends State<SignUp> {
                                     usrName: username.text,
                                     usrPassword: password.text))
                                 .whenComplete(() {
-                              //After success user creation go to login screen
+                          
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -174,14 +172,14 @@ class _SignUpState extends State<SignUp> {
                         )),
                   ),
 
-                  //Sign up button
+          
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text("Already have an account?"),
                       TextButton(
                           onPressed: () {
-                            //Navigate to sign up
+                     
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
